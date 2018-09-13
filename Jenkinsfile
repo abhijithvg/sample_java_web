@@ -8,21 +8,12 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''mvn -B -DskipTests clean package  
-
- 
-
-
- 
-
-
-
-'''
+        sh 'mvn -B -DskipTests clean package'
       }
     }
     stage('Deploy') {
       steps {
-        sh 'sudo cp -p ./target/SreeJavaExample.war /var/lib/tomcat8/webapps/sree-bo1.war'
+        sh 'sudo cp -p ./target/AbhiJavaExample.war /var/lib/tomcat8/webapps/abhi-bo1.war'
       }
     }
   }
